@@ -30,10 +30,9 @@ const Home = () => {
       <div className="flex justify-between items-center overflow-x-auto">
         <h1 className="text-3xl font-bold my-8">Movies List</h1>
         <Link to="/movies/create">
-          {/* <MdOutlineAddBox className="text-sky-800 text-4xl" /> */}
           <button
             type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-md px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
             Add New Movie
           </button>
@@ -53,10 +52,10 @@ const Home = () => {
                   <th class="px-3 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-700 tracking-wider">
                     MOVIE NAME
                   </th>
-                  <th class="px-3 py-3 border-b-2 border-gray-300 text-center text-sm leading-4 text-blue-700 tracking-wider">
-                    RELEASE YEAR
+                  <th class="px-3 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-700 tracking-wider">
+                    YEAR
                   </th>
-                  <th class="px-3 py-3 border-b-2 border-gray-300 text-center text-sm leading-4 text-blue-700 tracking-wider">
+                  <th class="px-3 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-700 tracking-wider">
                     GENRE
                   </th>
                   <th class="px-3 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-700 tracking-wider">
@@ -66,7 +65,7 @@ const Home = () => {
                     PRODUCER
                   </th>
                   <th class="px-3 py-3 border-b-2 border-gray-300 text-center text-sm leading-4 text-blue-700 tracking-wider">
-                    OPERATIONS
+                    CONTROLS
                   </th>
                 </tr>
               </thead>
@@ -79,10 +78,10 @@ const Home = () => {
                     <td class="px-3 py-3 text-left whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                       {movie.title}
                     </td>
-                    <td class="px-3 py-3 text-center whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                    <td class="px-3 py-3 text-left whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                       {movie.releaseYear}
                     </td>
-                    <td class="px-3 py-3 text-center whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                    <td class="px-3 py-3 text-left whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                       {movie.genre}
                     </td>
                     <td class="px-3 py-3 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
