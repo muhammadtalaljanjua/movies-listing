@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSnackbar } from "notistack";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
@@ -9,6 +10,7 @@ const DeleteMovie = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleDeleteMovie = () => {
     setLoading(true);
@@ -16,10 +18,12 @@ const DeleteMovie = () => {
       .delete(`http://localhost:5555/movies/${id}`)
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Movie Deleted Successfully!", { variant: "success" });
         navigate("/");
       })
       .catch((error) => {
         setLoading(false);
+        enqueueSnackbar("Error Occured!", { variant: "error" });
         console.log(error);
       });
   };

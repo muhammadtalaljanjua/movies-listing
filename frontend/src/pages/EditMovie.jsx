@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSnackbar } from "notistack";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import axios from "axios";
@@ -14,6 +15,7 @@ const EditMovie = () => {
   const [loading, setLoading] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     setLoading(true);
@@ -47,9 +49,12 @@ const EditMovie = () => {
       .put(`http://localhost:5555/movies/${id}`, data)
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Movie Edited Successfully!", { variant: "success" });
         navigate("/");
       })
       .catch((error) => {
+        setLoading(false);
+        enqueueSnackbar("Error Occurred!", { variant: "error" });
         console.log(error);
       });
   };
